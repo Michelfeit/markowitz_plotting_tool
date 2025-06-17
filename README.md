@@ -50,7 +50,7 @@ All allocations with minimal risk for any given mean return are located on the s
 
 (To generate the gif use ./pre_made_plots_scripts/generate_correlation_animation.py)
 
-<div align="center">
+<div>
   <img src="images/corr_coefficient.gif" width="400" />
   <br>
   <em>
