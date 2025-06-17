@@ -34,12 +34,12 @@ Plotting different asset allocations we can see a trend emerge. Furthermore this
       <td align="center">
         <img src="images/example_plot_4_assets.png" width="400" />
         <br>
-        <em>Figure 1: Four assets plot</em>
+        <em>Four assets plot</em>
       </td>
       <td align="center">
         <img src="images/example_plot_2_assets.png" width="400" />
         <br>
-        <em>Figure 2: Two assets plot</em>
+        <em>Two assets plot</em>
       </td>
     </tr>
   </table>
@@ -60,4 +60,31 @@ All allocations with minimal risk for any given mean return are located on the s
   
 ## Introduction of this project
 
-This project allows for visualizing the possible risk assotiated with the mean return of a set of assets by plotting random allocations of a given stock portfolio on a μ-σ-diagram following the work of Markowitz. Data is pulled form the yahoo finace API. For portfolios containing mroe than two assets, the plot is visualized as a scatter plot with random allociation. For two assets, the efficiency frontier is displayed as a line plot and calculated in closed form.
+This project allows for visualizing the possible risk assotiated with the mean return of a set of assets by plotting random allocations of a given stock portfolio on a μ-σ-diagram following the work of Markowitz. Data is pulled form the yahoo finace API. For portfolios containing more than two assets, the plot is visualized as a scatter plot with random allociation. For two assets, the efficiency frontier is displayed as a line plot and calculated in closed form. The script main.py generates μ-σ-diagrams for given portfolios. In case of 2 assets, the efficiency frontier is displayed as a line, otherwise scatter-plots of random allocations are produced. 
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/multiple_allovations_plot.png" width="400" />
+        <br>
+        <em>Multi-protfolio-example plot utilizing main.py</em>
+      </td>
+      <td align="center">
+        <img src="images/example_inputs.png" width="200" />
+        <br>
+        <em>Inputs corresponding to the multi-portfolio example </em>
+      </td>
+    </tr>
+  </table>
+</div>
+
+To produce the example image, the provided inputs were used. Here a brief explanation of all parameters:
+- portfolios: nested list of tickersymbols. each element corresponds to a portfolio with the given assets provided as ticker symbols. Note that german stocks require the ".DE" suffix. For more details check ticker symbols of yahoo finance.
+- labels: the labels displayed for each portfolio in the legend of the plot. An empty string will result in a label containing all ticker symbols.
+- colors: the coloration of the distribution/ efficiency frontier of each portfolio.
+- colors_assets: the individual μ-σ-position of each stock is seperatly plotted and can also be colored.
+- accuracy: controls the number of allocations sampled for each portfolio containing more than 2 assets.
+- x_label: sets the displayed labelling for the x-axis
+- y_label: sets the displayed labelling for the y_axis
+- title_diagram: sets the title of the diagram
