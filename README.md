@@ -6,7 +6,7 @@ In the following paragraphs we assume that the return of a stock follows a Gauss
 Given a portfolio of $N$ assets and their respective mean returns $\mu \in \mathbb{R}^N$ as well as 
 their individual portfolio weights $x \in \mathbb{R}^n$ with $\sum_{n}^{N}x_n = 1$, portfolio mean return is: <br>
 
-$$\mu_p = \sum_{n}^{N} \mu_n * x_n$$ <br>
+$$\mu = \sum_{n}^{N} \mu_n * x_n$$ <br>
 
 Mean Returns of individual assets are calculated via time series estimation of past closing prices.
 Markowitz associates risk with volatility (expressed via variance $\sigma^2$ /standard deviation \sigma)
@@ -17,6 +17,10 @@ $$s_{ij} = \frac{1}{T-1}\sum_{t}^{T}(x_{i,t}-\mu_i)(x_{j,t}-\mu_j)$$ <br>
 and the correlation $k_{ij}$ as covariance normalized with individual standard deviations of asset i and j: <br>
 
 $$k_{ij} = \frac{s_{ij}}{\sigma_i \sigma_j}$$ <br>
+
+The covariance between two assets allows us to express the covariance matrix $C$ with entries $c_{ij} = s{ij}$. With this we are now able to calculate the portfolio variance (and therefore the risk assotiated with a given protfolio) via the weighted sum over all covariances, as follows:
+
+$$\simga^s = x^TCx$$
 
 
 # GIF
