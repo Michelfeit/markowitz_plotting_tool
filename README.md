@@ -28,21 +28,22 @@ Assuming we have historical price data and can therefore calculate mean and cova
 
 Plotting different asset allocations we can see a trend emerge. Furthermore this method allows the distinction of optimal versus suboptimal portfolios. Crudly speaking, when we can find an asset allocation that promises a higher return for equal volatility or less volatility for equal returns we think of that allocation as more optimal. 
 <p align="center">
-<table>
-  <tr>
-    <td align="center">
-      <img src="images/example_plot_4_assets.png" width="400" />
-      <br>
-      <em>Figure 1: Four assets plot</em>
-    </td>
-    <td align="center">
-      <img src="images/example_plot_2_assets.png" width="400" />
-      <br>
-      <em>Figure 2: Two assets plot</em>
-    </td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/example_plot_4_assets.png" width="400" />
+        <br>
+        <em>Figure 1: Four assets plot</em>
+      </td>
+      <td align="center">
+        <img src="images/example_plot_2_assets.png" width="400" />
+        <br>
+        <em>Figure 2: Two assets plot</em>
+      </td>
+    </tr>
+  </table>
 <\p>
+  
 ## Introduction of this project
 
 This project allows for visualizing the possible risk assotiated with the mean return of a set of assets by plotting random allocations of a given stock portfolio on a μ-σ-diagram following the work of Markowitz. Data is pulled form the yahoo finace API. For portfolios containing mroe than two assets, the plot is visualized as a scatter plot with random allociation. For two assets, the efficiency frontier is displayed as a line plot and calculated in closed form.
@@ -51,4 +52,5 @@ This project allows for visualizing the possible risk assotiated with the mean r
 <p align="center">
   <img src="images/corr_coefficient.gif" width="500">
 <\p>
+  
 *gif caption*
