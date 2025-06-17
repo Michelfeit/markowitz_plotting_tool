@@ -50,8 +50,12 @@ All allocations with minimal risk for any given mean return are located on the s
 
 (To generate the gif use ./pre_made_plots_scripts/generate_correlation_animation.py)
 
-<img src="images/corr_coefficient.gif" width="500">
-*visualizing the efficiency frontier based on different correlation coefficients*
+<td align="center">
+        <img src="images/example_plot_4_assets.png" width="400" />
+        <br>
+        <em>visualizing the efficiency frontier based on different correlation coefficients (To generate the gif use ./pre_made_plots_scripts/generate_correlation_animation.py)</em>
+</td>
+
   
 ## Introduction of this project
 
