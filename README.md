@@ -66,12 +66,12 @@ This project allows for visualizing the possible risk assotiated with the mean r
   <table>
     <tr>
       <td align="center">
-        <img src="images/multiple_allovations_plot.png" width="400" />
+        <img src="images/multiple_allocations_plot.png" width="400" />
         <br>
         <em>Multi-protfolio-example plot utilizing main.py</em>
       </td>
       <td align="center">
-        <img src="images/example_inputs.png" width="100" />
+        <img src="images/example_inputs_for_main.png" width="100" />
         <br>
         <em>Inputs corresponding to the multi-portfolio example </em>
       </td>
