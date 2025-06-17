@@ -15,6 +15,7 @@ In order to calculate the risk assotiated with a portfolio and therefore with th
 $$s_{ij} = \frac{1}{T-1}\sum_{t}^{T}(x_{i,t}-\mu_i)(x_{j,t}-\mu_j)$$ <br>
 
 and the correlation $k_{ij}$ as covariance normalized with individual standard deviations of asset i and j: <br>
+
 $$k_{ij} = \frac{s_{ij}}{\sigma_i \sigma_j}$$ <br>
 
 
