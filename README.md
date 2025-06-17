@@ -1,8 +1,8 @@
 # Generating Markowitz μ-σ-Plots with real data from yahoofinance:
 
-Harry Markowitz recognized that investors hold multiple assets (diversifying) in order to decrease risk. In his work, Markowitz formalizes risk and makes it tanglible under certain assumptions. Here is a quick rundown of the theory behind this project.
+In his work, Harry Markowitz formalizes diversification and risk and makes it tanglible under certain assumptions. Here is a quick rundown of the theory behind this project.
 
-### Theoretical background
+## Theoretical background
 
 In the following paragraphs we assume that the return of a stock follows a Gaussian Distribution and we calculate the mean return of a portfolio as follows: 
 Given a portfolio of $N$ assets and their respective mean returns $\mu \in \mathbb{R}^N$ as well as 
@@ -24,10 +24,13 @@ The covariance between two assets allows us to express the covariance matrix $C$
 
 $$\sigma^2 = x^TCx$$
 
-Assuming we have historical price data and can therefore calculate mean and covariance of assets withing our porfolio as well as the protfolio werights, the afforementioned formualars provide allow us to get the eman and variance of a given portfolio allocation.
+Assuming we have historical price data and can therefore calculate mean and covariance of assets withing our porfolio as well as the protfolio weights, the afforementioned formualars provide allow us to get the eman and variance of a given portfolio allocation. 
 
-### Introduction of this project
+Plotting differnent asset allocations we can see a trend emerge. Furthermore this method allows the distinction of optimal versus suboptimal portfolios. Crudly speaking, when we can find an asset allocation that promises a higher return for equal volatility or less volatility for equal returns we think of that allocation as more optimal. 
 
+## Introduction of this project
+
+This project allows for visualizing the possible risk assotiated with the mean return of a set of assets by plotting random allocations of a given stock portfolio on a μ-σ-diagram following the work of Markowitz. Data is pulled form the yahoo finace API. For portfolios containing mroe than two assets, the plot is visualized as a scatter plot with random allociation. For two assets, the efficiency frontier is displayed as a line plot and calculated in closed form.
 
 # GIF
 ![](images/corr_coefficient.gif)
