@@ -27,7 +27,7 @@ $$\sigma^2 = x^TCx$$
 Assuming we have historical price data and can therefore calculate mean and covariance of assets withing our porfolio as well as the protfolio weights, the afforementioned formualars provide allow us to get the eman and variance of a given portfolio allocation. 
 
 Plotting different asset allocations we can see a trend emerge. Furthermore this method allows the distinction of optimal versus suboptimal portfolios. Crudly speaking, when we can find an asset allocation that promises a higher return for equal volatility or less volatility for equal returns we think of that allocation as more optimal. 
-<p align="center">
+<div style="text-align: center;">
   <table>
     <tr>
       <td align="center">
@@ -42,7 +42,7 @@ Plotting different asset allocations we can see a trend emerge. Furthermore this
       </td>
     </tr>
   </table>
-<\p>
+<\div>
   
 ## Introduction of this project
 
