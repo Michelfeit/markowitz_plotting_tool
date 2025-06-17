@@ -44,12 +44,13 @@ Plotting different asset allocations we can see a trend emerge. Furthermore this
     </tr>
   </table>
 </div>
+
+Allocations follow a parabolic form and in the multi-asset case (more than two) we see the allocations spreading out.
+All allocations with minimal risk for any given mean return are located on the so-called efficiency frontier. The shape of the efficiency frontier is dictated by the correlation between assets. In the two-asset-case, the efficiency frontier is visualized in the following gif. (To generate the gif use ./pre_made_plots_scripts/generate_correlation_animation.py)
+
+<img src="images/corr_coefficient.gif" width="500">
+*visualizing the efficiency frontier based on different correlation coefficients*
   
 ## Introduction of this project
 
 This project allows for visualizing the possible risk assotiated with the mean return of a set of assets by plotting random allocations of a given stock portfolio on a μ-σ-diagram following the work of Markowitz. Data is pulled form the yahoo finace API. For portfolios containing mroe than two assets, the plot is visualized as a scatter plot with random allociation. For two assets, the efficiency frontier is displayed as a line plot and calculated in closed form.
-
-# GIF
-<img src="images/corr_coefficient.gif" width="500">
-  
-*gif caption*
