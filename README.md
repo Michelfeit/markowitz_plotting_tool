@@ -71,7 +71,7 @@ This project allows for visualizing the possible risk assotiated with the mean r
         <em>Multi-protfolio-example plot utilizing main.py</em>
       </td>
       <td align="center">
-        <img src="images/example_inputs_for_main.png" width="150" />
+        <img src="images/example_inputs_for_main.png" width="200" />
         <br>
         <em>Inputs corresponding to the multi-portfolio example </em>
       </td>
