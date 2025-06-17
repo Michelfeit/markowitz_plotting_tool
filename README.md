@@ -46,7 +46,9 @@ Plotting different asset allocations we can see a trend emerge. Furthermore this
 </div>
 
 Allocations follow a parabolic form and in the multi-asset case (more than two) we see the allocations spreading out.
-All allocations with minimal risk for any given mean return are located on the so-called efficiency frontier. The shape of the efficiency frontier is dictated by the correlation between assets. In the two-asset-case, the efficiency frontier is visualized in the following gif. (To generate the gif use ./pre_made_plots_scripts/generate_correlation_animation.py)
+All allocations with minimal risk for any given mean return are located on the so-called efficiency frontier. The shape of the efficiency frontier is dictated by the correlation between assets. In the two-asset-case, the efficiency frontier is visualized in the following gif. 
+
+(To generate the gif use ./pre_made_plots_scripts/generate_correlation_animation.py)
 
 <img src="images/corr_coefficient.gif" width="500">
 *visualizing the efficiency frontier based on different correlation coefficients*
