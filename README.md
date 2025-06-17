@@ -50,7 +50,6 @@ Plotting different asset allocations we can see a trend emerge. Furthermore this
 This project allows for visualizing the possible risk assotiated with the mean return of a set of assets by plotting random allocations of a given stock portfolio on a μ-σ-diagram following the work of Markowitz. Data is pulled form the yahoo finace API. For portfolios containing mroe than two assets, the plot is visualized as a scatter plot with random allociation. For two assets, the efficiency frontier is displayed as a line plot and calculated in closed form.
 
 # GIF
-<p align="center">
-  <img src="images/corr_coefficient.gif" width="500">
+<img src="images/corr_coefficient.gif" width="500">
   
 *gif caption*
