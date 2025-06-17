@@ -1,7 +1,7 @@
 # Generating Markowitz μ-σ-Plots with real data from yahoofinance:
 
-Harry Markowitz recognized that investors hold multiple assets (diversifying) in order to decrease risk.<br>
-In his work, Markowitz formalizes risk and makes it tanglible under certain assumptions.<br>
+Harry Markowitz recognized that investors hold multiple assets (diversifying) in order to decrease risk. In his work, Markowitz formalizes risk and makes it tanglible under certain assumptions. Here is a quick rundown of the theory behind this project.<br>
+
 In the following paragraphs we assume that the return of a stock follows a Gaussian Distribution and we calculate the mean return of a portfolio as follows: 
 Given a portfolio of $N$ assets and their respective mean returns $\mu \in \mathbb{R}^N$ as well as 
 their individual portfolio weights $x \in \mathbb{R}^n$ with $\sum_{n}^{N}x_n = 1$, portfolio mean return is: <br>
