@@ -79,7 +79,7 @@ This project allows for visualizing the possible risk assotiated with the mean r
   </table>
 </div>
 
-To produce the example image, the provided inputs were used. Here a brief explanation of all parameters:
+Here a brief explanation of all parameters:
 - portfolios: nested list of tickersymbols. each element corresponds to a portfolio with the given assets provided as ticker symbols.
               Note that german stocks require the ".DE" suffix. For more details check ticker symbols of yahoo finance.
 - labels: the labels displayed for each portfolio in the legend of the plot. An empty string will result in a label containing all ticker symbols.
