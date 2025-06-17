@@ -28,7 +28,20 @@ Assuming we have historical price data and can therefore calculate mean and cova
 
 Plotting different asset allocations we can see a trend emerge. Furthermore this method allows the distinction of optimal versus suboptimal portfolios. Crudly speaking, when we can find an asset allocation that promises a higher return for equal volatility or less volatility for equal returns we think of that allocation as more optimal. 
 
-<img src="images/example_plot_4_assets.png" width="500"> <img src="images/example_plot_2_assets.png" width="500">
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/example_plot_4_assets.png" width="400" />
+      <br>
+      <em>Figure 1: Four assets plot</em>
+    </td>
+    <td align="center">
+      <img src="images/example_plot_2_assets.png" width="400" />
+      <br>
+      <em>Figure 2: Two assets plot</em>
+    </td>
+  </tr>
+</table>
 
 ## Introduction of this project
 
