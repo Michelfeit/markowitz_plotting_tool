@@ -30,11 +30,10 @@ colors_assets = [
     "darkred"
 ]
 accuracy = 30000
-compact_x = True
-
 x_label = 'σ  (portfolio standard deviation)'
 y_label = 'μ  (expected return)'
 title_diagram = 'Markowitz μ–σ plot'
+compact_x = True
 
 fig, ax = plt.subplots(figsize=(8, 6))
 # Axis labels and title
