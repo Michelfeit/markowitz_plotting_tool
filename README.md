@@ -52,6 +52,5 @@ This project allows for visualizing the possible risk assotiated with the mean r
 # GIF
 <p align="center">
   <img src="images/corr_coefficient.gif" width="500">
-<\p>
   
 *gif caption*
