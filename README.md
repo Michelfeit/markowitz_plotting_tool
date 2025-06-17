@@ -28,7 +28,7 @@ Assuming we have historical price data and can therefore calculate mean and cova
 
 Plotting different asset allocations we can see a trend emerge. Furthermore this method allows the distinction of optimal versus suboptimal portfolios. Crudly speaking, when we can find an asset allocation that promises a higher return for equal volatility or less volatility for equal returns we think of that allocation as more optimal. 
 
-<div>
+<div align="center">
   <table>
     <tr>
       <td align="center">
@@ -48,7 +48,7 @@ Plotting different asset allocations we can see a trend emerge. Furthermore this
 Allocations follow a parabolic form and in the multi-asset case (more than two) we see the allocations spreading out.
 All allocations with minimal risk for any given mean return are located on the so-called efficiency frontier. The shape of the efficiency frontier is dictated by the correlation between assets. In the two-asset-case, the efficiency frontier is visualized in the following gif. 
 
-<div>
+<div align="center">
   <img src="images/corr_coefficient.gif" width="550" />
   <br>
   <em>
