@@ -21,7 +21,7 @@ def _load_catalogue() -> dict:
     return {}
 
 def _store_catalogue(cat: dict) -> None:
-    CATALOGUE.write_text(json.dumps(cat, indent=2, default=str))
+    Path(CATALOGUE).write_text(json.dumps(cat, indent=2, default=str))
 
 def _folder_name(start: str, end: str) -> str:
     return f"{start}_{end}"
@@ -58,17 +58,17 @@ def check_cache(start, end, tickers):
 
 def save_to_disk(mean, cov, start, end, ticker, interval):
     # ---------------- save to disk -------------------
-    folder = _data_path() / _folder_name(start, end)
-    mean_dir = folder / "mean.csv"
-    cov_dir = folder / "covariance.csv"
+    folder = os.path.join(_data_path(), _folder_name(start, end))
+    mean_dir = os.path.join(folder, Path("mean.csv"))
+    cov_dir = os.path.join(folder,Path("covariance.csv"))
     catalogue = _load_catalogue()
 
-    folder.mkdir(exist_ok=True)
+    Path(folder).mkdir(exist_ok=True)
     mean.to_csv(mean_dir, header=True)
     cov.to_csv(cov_dir, header=True)
 
     # update catalogue
-    catalogue[folder.name] = {
+    catalogue[Path(folder).name] = {
         "tickers": ticker,
         "interval": interval,
         "created": dt.datetime.now().isoformat(timespec="seconds")

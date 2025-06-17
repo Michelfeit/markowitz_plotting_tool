@@ -4,7 +4,7 @@ from matplotlib.colors import LinearSegmentedColormap, Normalize
 def build_plot(plt, tickers, sigmas, mus,
                sigmas_assets=None, mus_assets=None,
                color_dots=None, color_assets=None,
-               descriptor=""):
+               descriptor=None):
     print(len(sigmas), len(mus))
     assert len(sigmas) == len(mus)
     assert len(sigmas_assets) >= 2
@@ -14,8 +14,8 @@ def build_plot(plt, tickers, sigmas, mus,
         color_dots = "blue"
     if color_assets is None or color_assets.strip()  == "":
         color_assets = "black"
-    if descriptor.strip():
-        descriptor = [t.removesuffix('.DE') for t in tickers]
+    if descriptor is not None and descriptor.strip() == "":
+        descriptor = ", ".join([t.removesuffix('.DE') for t in tickers])
 
     # get the right color
     if isinstance(color_dots, list) and all(isinstance(item, str) for item in color_dots):
@@ -37,4 +37,5 @@ def build_plot(plt, tickers, sigmas, mus,
     # plot individual assets
     plt.scatter(sigmas_assets, mus_assets,
             s=40, alpha=1, color=color_assets, marker='X')
+
     return plt
