@@ -1,6 +1,6 @@
 # Generating Markowitz μ-σ-Plots with real data from yahoofinance:
 
-In his work, Harry Markowitz formalizes diversification and risk and makes it tanglible under certain assumptions. Here is a quick rundown of the theory behind this project.
+Harry Markowitz formalizes diversification and risk and makes it tanglible under certain assumptions. Here is a quick rundown of the theory behind this project.
 
 ## Theoretical background
 
@@ -8,7 +8,7 @@ In the following paragraphs we assume that the return of a stock follows a Gauss
 Given a portfolio of $N$ assets and their respective mean returns $\mu \in \mathbb{R}^N$ as well as 
 their individual portfolio weights $x \in \mathbb{R}^n$ with $\sum_{n}^{N}x_n = 1$, portfolio mean return is:
 
-$$\mu = \sum_{n}^{N} \mu_n * x_n$$
+$$\mu = \sum_{n}^{N} \mu_n \dot x_n$$
 
 Mean Returns of individual assets are calculated via time series estimation of past closing prices.
 Markowitz associates risk with volatility (expressed via variance $\sigma^2$ /standard deviation \sigma)
@@ -141,3 +141,6 @@ This script generates the mu-sigma-distribution of random portfolios of assets o
     </tr>
   </table>
 </div>
+
+# Sources
+The inspiration to this project stems from the lecture "Asset Pricing" that the author attended. Mathmatical background was taken from https://en.wikipedia.org/wiki/Modern_portfolio_theory
