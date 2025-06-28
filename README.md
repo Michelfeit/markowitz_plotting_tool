@@ -92,30 +92,51 @@ Here a brief explanation of all parameters:
 
 
 ## Pre-made scripts
-the directory <code>./pre_made_plots_scripts/ </code> contains some other useful implementations of the module of this project.
+the directory <code>./pre_made_plots_scripts/ </code> contains some other useful implementations of the modules of this project.
 
 ### generate_correlation_animation.py
 This script generates an animation of the efficiency frontier depending on the correlaiton coefficient
 of two assets in the two-asset-case
 
 ### multiple_dax_subsets.py
+This script generates the mu-sigma-distribution of random portfolios of assets of the DAX index, as well as random subsets.
 <div align="center">
   <table>
     <tr>
       <td align="center">
-        <img src="images/multiple_allocations_plot.png" width="400" />
+        <img src="images/random_dax_plot.png" width="400" />
         <br>
-        <em>Multi-portfolio-example plot utilizing main.py</em>
+        <em>Plotting multiple subsets of DAX and DAX itself</em>
       </td>
-      <td align="left" style="vertical-align: top; padding-left: 20px;">
+      <td align="left" style="vertical-align: top;">
         <p><strong>Description:</strong></p>
-        <p>This plot showcases the result of running <code>main.py</code> with multiple portfolio configurations. Each point represents a random allocation of weights across selected assets, and their risk-return profiles are visualized.</p>
+        <p>This plot showcases the result of running <code>pre_made_plots_scripts/multiple_dax_subsets.py</code></p>
+        <p>Each subset is color code, with the DAX in grey and the DAX, as it is weighted in market cap, in black</p>
         <p><strong>Features:</strong></p>
         <ul>
-          <li>Visualizes multiple random allocations</li>
-          <li>Plots efficient frontier and scattered portfolios</li>
-          <li>Demonstrates the variability in portfolio outcomes</li>
+          <li>change number of random subsets</li>
+          <li>change number of assets per subset</li>
+          <li>change number of portfolios generated per subset</li>
         </ul>
+      </td>
+    </tr>
+  </table>
+</div>
+
+### single_portfolio_plus_scatter.py
+This script generates the mu-sigma-distribution of random portfolios of assets of the DAX index, as well as random subsets.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/single_pf_plot.png" width="400" />
+        <br>
+        <em>Plotting a single portfolio allocation, on top of random scatter plot</em>
+      </td>
+      <td align="left" style="vertical-align: top">
+        <p><strong>Description:</strong></p>
+        <p>This plot showcases the result of running <code>pre_made_plots_scripts/single_portfolio_plus_scatter.py</code></p>
+        <p>In black, a specific portfolio allocation is shown, on top of random allocations of the same assets (in blue)</p>
       </td>
     </tr>
   </table>
