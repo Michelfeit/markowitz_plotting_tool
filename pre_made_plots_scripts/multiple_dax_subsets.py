@@ -27,12 +27,14 @@ def generate_distinct_colors(n):
     # Convert each hue→(r, g, b) with saturation=0.9, value=0.95
     return [colorsys.hsv_to_rgb(h, 0.9, 0.95) for h in hues]
 
-df = get_dax_df()
-tickers_with_suffix = df['Ticker'] + '.DE'
+url = "https://en.wikipedia.org/wiki/DAX"
+tables = pd.read_html(url)
+dax_table = tables[4]  # Table 4: DAX 40 Components
+tickers = dax_table["Ticker"].tolist()
 
-number_of_subsets = 8
+number_of_subsets = 5
 number_of_assets_per_subset = 3
-number_of_generated_portfolios = 20000
+number_of_generated_portfolios = 5000
 
 #Random Dax Portfolios containing all 40 stocks
 sigma_dax, mu_dax = provide_points_random_allocation_dax(number_of_generated_portfolios//4)
@@ -41,7 +43,7 @@ mean_idx, cov_idx, dax_weights = get_dax_index_mean_cov_weights()
 μ_idx, σ2_idx = calc_mu_sigma(mean_idx, cov_idx, dax_weights)
 
 # Multiple subset of DAX
-samples = [random.sample(range(len(tickers_with_suffix)),
+samples = [random.sample(range(len(tickers)),
                          number_of_assets_per_subset)
            for _ in range(number_of_subsets)]
 subsets_df = pd.DataFrame({'Dax Subset': samples})
@@ -50,13 +52,14 @@ ms = []
 sigs = []
 for subset in samples:
     ticker_string = []
-    tickers = []
+    ticker = []
     for i in range(len(subset)):
-        ticker_string.append(df['Ticker'][subset[i]])
-        tickers.append(tickers_with_suffix[subset[i]])
-    ticker_str = ", ".join(ticker_string)
+        ticker_string.append(tickers[subset[i]])
+        ticker.append(tickers[subset[i]])
+    tickers_cleaned = [ticker.replace(".DE", "") for ticker in ticker_string]
+    ticker_str = ", ".join(tickers_cleaned)
     ticker_title.append(ticker_str)
-    sigmas, mus = provide_points_random_allocation(tickers, number_of_generated_portfolios)
+    sigmas, mus = provide_points_random_allocation(ticker, number_of_generated_portfolios)
     sigs.append(sigmas)
     ms.append([mus])
 
@@ -86,7 +89,7 @@ for i in range(len(subsets_df)):
 
 
     plt.scatter(s, m,
-                s=1, alpha=0.5, color=(r,g,b), label=string)
+                s=2, alpha=0.5, color=(r,g,b), label=string)
 
 plt.scatter(sigma_dax, mu_dax,
                 s=7, alpha=0.5, color="grey", label="DAX random allocation")

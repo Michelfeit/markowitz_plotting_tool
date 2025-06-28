@@ -77,5 +77,5 @@ def save_to_disk(mean, cov, start, end, ticker, interval):
 
 def get_dax_df():
     name = "dax_may_2025.csv"
-    dir = DATA_DIR / name
+    dir = os.path.join(DATA_DIR , name)
     return pd.read_csv(dir, index_col=0).squeeze("columns")

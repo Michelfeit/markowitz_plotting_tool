@@ -1,3 +1,5 @@
+import pandas as pd
+
 from data_fetching.yahoo_finance import get_means_and_cov
 from data_fetching.data_management import get_dax_df
 import numpy as np
@@ -36,17 +38,25 @@ def get_portfolio_mean_cov(tickers:list):
     return mean, cov
 
 def get_dax_index_mean_cov_weights():
-    df = get_dax_df()
-    tickers_with_suffix = df['Ticker'] + '.DE'
-    mean, cov = get_means_and_cov(tickers_with_suffix.tolist(),
+    url = "https://en.wikipedia.org/wiki/DAX"
+    tables = pd.read_html(url)
+    dax_table = tables[4]  # Table 4: DAX 40 Components
+    tickers = dax_table["Ticker"].tolist()
+    mean, cov = get_means_and_cov(tickers,
                                   "2021-01-01",
                                   None,
                                   "1d",
                                   True,
                                   False)
-    weights = df["Share"].to_numpy()
-    mean = mean.reindex(tickers_with_suffix)
+    weight_table = tables[4]  # The 2nd table contains “Indexgewicht in %”
+    print(weight_table.columns)
+    df_weights = weight_table[["Ticker", "Index weighting (%)1"]]
+    df_weights["Index weighting (%)1"] = df_weights["Index weighting (%)1"].replace("TBD", 0)
+    df_weights.loc[df_weights["Ticker"] == "RHM.DE", "Index weighting (%)1"] = 0
+    df_weights["Index weighting (%)1"] = pd.to_numeric(df_weights["Index weighting (%)1"]) / 100
+    weights = df_weights["Index weighting (%)1"].to_numpy()
+    mean = mean.reindex(tickers)
 
     # Reindex the covariance matrix: both rows and columns
-    cov = cov.reindex(index=tickers_with_suffix, columns=tickers_with_suffix)
+    cov = cov.reindex(index=tickers, columns=tickers)
     return mean, cov, weights

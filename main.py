@@ -4,9 +4,43 @@ import matplotlib.pyplot as plt
 from dots_generation.efficiency_frontier_points import single_asset_points, provide_points_ef_line
 from dots_generation.portfolio_scattered_points import provide_points_random_allocation
 
-"""Given list of portfolios, lit of colors, generate plot. Portfolios with more than 2 assets will be generated as
-scatter plots. accuracy can be customized all singular assets will be marked with an X.
-Special "portfolios exist": DAX, DAXsub """
+"""
+Generates a Markowitz μ–σ plot for a given list of portfolios.
+
+Each portfolio is a list of ticker symbols representing assets. Portfolios with more than
+two assets will be plotted as scatter plots using randomly generated allocations, while
+two-asset portfolios will be plotted using a deterministic efficient frontier line. 
+Each individual asset is also plotted with an 'X' marker.
+
+Parameters:
+-----------
+portfolios : list[list[str]]
+    Nested list where each sublist contains ticker symbols (e.g., "SAP.DE") representing a portfolio.
+labels : list[str] or None
+    Labels for each portfolio. If None, no legend is displayed. If a label is an empty string, a label
+    with ticker symbols will be used automatically.
+colors : list[str]
+    Colors for plotting the efficiency frontier or scatter distribution of each portfolio.
+colors_assets : list[str]
+    Colors used for marking the individual assets in each portfolio.
+accuracy : int
+    Determines the number of allocation samples for portfolios with more than two assets.
+x_label : str
+    Label for the x-axis (usually standard deviation σ).
+y_label : str
+    Label for the y-axis (usually expected return μ).
+title_diagram : str
+    Title displayed on top of the diagram.
+compact_x : bool
+    If True, compresses the x-axis range to better fit the data.
+
+Notes:
+------
+- Single assets are marked with an 'X'.
+- Axis spines are customized to represent origin-based axes with arrowheads.
+- Uses functions: `provide_points_random_allocation`, `provide_points_ef_line`, 
+  `single_asset_points`, and `build_plot` (not shown in snippet).
+"""
 
 portfolios = [
     ["SAP.DE", "AIR.DE"],
@@ -44,7 +78,6 @@ ax.grid(True, ls='--', alpha=0.3)
 
 plt.grid(True, ls='--', alpha=0.3)
 
-#plt.tight_layout()
 min_x = 10
 max_x = 0
 all_tickers = list({ticker for portfolio in portfolios for ticker in portfolio})

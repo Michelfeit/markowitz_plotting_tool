@@ -89,3 +89,34 @@ To produce the example image, the provided inputs were used. Here a brief explan
 - x_label: sets the displayed labelling for the x-axis
 - y_label: sets the displayed labelling for the y_axis
 - title_diagram: sets the title of the diagram
+
+
+## Pre-made scripts
+the directory <code>./pre_made_plots_scripts/ </code> contains some other useful implementations of the module of this project.
+
+### generate_correlation_animation.py
+This script generates an animation of the efficiency frontier depending on the correlaiton coefficient
+of two assets in the two-asset-case
+
+### multiple_dax_subsets.py
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="images/multiple_allocations_plot.png" width="400" />
+        <br>
+        <em>Multi-portfolio-example plot utilizing main.py</em>
+      </td>
+      <td align="left" style="vertical-align: top; padding-left: 20px;">
+        <p><strong>Description:</strong></p>
+        <p>This plot showcases the result of running <code>main.py</code> with multiple portfolio configurations. Each point represents a random allocation of weights across selected assets, and their risk-return profiles are visualized.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Visualizes multiple random allocations</li>
+          <li>Plots efficient frontier and scattered portfolios</li>
+          <li>Demonstrates the variability in portfolio outcomes</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

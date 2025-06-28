@@ -19,7 +19,7 @@ def get_means_and_cov(
     """
     Returns (meanVector, covMatrix) – either from disk or from Yahoo Finance.
     """
-    if end is None:  # nice default
+    if end is None:
         end = dt.date.today().strftime("%Y-%m-%d")
 
     folder = os.path.join(Path(_data_path()),Path(_folder_name(start, end)))
