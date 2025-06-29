@@ -4,9 +4,29 @@ import matplotlib.pyplot as plt
 from dots_generation.efficiency_frontier_points import single_asset_points, provide_points_ef_line
 from dots_generation.portfolio_scattered_points import provide_points_random_allocation, provide_point_for_specific_weights
 
+"""
+single_porfolio_plus_scatter.py
 
+This script visualizes the risk-return space of a portfolio using Modern Portfolio Theory.
+It generates a scatterplot of randomly weighted portfolios and displays them alongside 
+user-defined allocation. 
+You may change:
+- the tickers in the portfolio variable to display different portfolios.
+- the allocation weights in the weight variable. (The index of the weights list corresponds to the ticker with the same
+  index in the portfolio list.
+- n (the number of randomly-sampled portfolio allocations). 
+
+- Random portfolios are shown in blue.
+- The specific allocation is shown as a black 'X'.
+"""
+
+# change the list of portfolios to your liking
 portfolio = ["SAP.DE", "BAYN.DE", "ALV.DE", 'RHM.DE']
+# change the weight to your liking
 weight = [3/10, 4/10, 0, 3/10]
+assert len(portfolio) == len(weight)
+# n is the amount of random allocations
+n = 10000
 
 x_label = 'σ  (portfolio standard deviation)'
 y_label = 'μ  (expected return)'
@@ -26,7 +46,7 @@ plt.grid(True, ls='--', alpha=0.3)
 min_x = 10
 max_x = 0
 
-sigmas, mus = provide_points_random_allocation(portfolio, 10000)
+sigmas, mus = provide_points_random_allocation(portfolio, n)
 sig_1, mu_1 = provide_point_for_specific_weights(portfolio, weight)
 
 min_s = min(sigmas)

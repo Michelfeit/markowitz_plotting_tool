@@ -18,6 +18,7 @@ def _data_path():
 def _load_catalogue() -> dict:
     if Path(CATALOGUE).exists():
         return json.loads(Path(CATALOGUE).read_text())
+    Path(CATALOGUE).write_text(json.dumps({}))
     return {}
 
 def _store_catalogue(cat: dict) -> None:

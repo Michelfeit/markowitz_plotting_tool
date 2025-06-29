@@ -124,7 +124,8 @@ This script generates the mu-sigma-distribution of random portfolios of assets o
 </div>
 
 ### single_portfolio_plus_scatter.py
-This script generates the mu-sigma-distribution of random portfolios of assets of the DAX index, as well as random subsets.
+This script generates the mu-sigma-distribution of random allocations of one portfolio, as wwell as highlighting a
+specific allocation (seen as the black cross)
 <div align="center">
   <table>
     <tr>
@@ -137,10 +138,20 @@ This script generates the mu-sigma-distribution of random portfolios of assets o
         <p><strong>Description:</strong></p>
         <p>This plot showcases the result of running <code>pre_made_plots_scripts/single_portfolio_plus_scatter.py</code></p>
         <p>In black, a specific portfolio allocation is shown, on top of random allocations of the same assets (in blue)</p>
-      </td>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>change the specific assets the portfolio consists of</li>
+          <li>change the specific weights for the given portfolio</li>
+          <li>change number of portfolios generated per subset</li>
+        </ul>
+        </td>
     </tr>
   </table>
 </div>
 
-# Sources
-The inspiration to this project stems from the lecture "Asset Pricing" that the author attended. Mathmatical background was taken from https://en.wikipedia.org/wiki/Modern_portfolio_theory
+### Sources & Disclaimer
+
+This project was inspired by the *Asset Pricing* lecture attended by the author. The mathematical foundations are based on concepts from [Modern Portfolio Theory](https://en.wikipedia.org/wiki/Modern_portfolio_theory).
+
+> **Disclaimer:**  
+> This project was created solely for learning purposes. It is not intended to be a complete, fully accurate, or production-ready implementation of portfolio optimization techniques. The author makes no guarantees regarding the correctness or reliability of the results produced.
