@@ -55,8 +55,8 @@ with plt.rc_context(rc):
         ax.plot(sigmas, mus, linestyle='-', color=color, label=label)
 
     # Dynamic animated line
-    (eff_line,) = ax.plot([], [], color='red', lw=2, label='efficent portfolios')
-    (ineff_line,) = ax.plot([], [], color='lightcoral' , lw=2, linestyle='--', label='inefficent portfolios')
+    (eff_line,) = ax.plot([], [], color='red', lw=2, label='efficient portfolios')
+    (ineff_line,) = ax.plot([], [], color='lightcoral' , lw=2, linestyle='--', label='inefficient portfolios')
 
     # Highlight individual assets
     ax.scatter(np.sqrt(s), m, s=50, alpha=0.5, color="black", marker='X', label='Specific Assets')
